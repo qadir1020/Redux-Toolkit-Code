@@ -1,5 +1,5 @@
 import React from "react";
-import { addItem } from "../redux/slices/cartSlice";
+import { addItem } from '../redux/slice/cartSlice';
 import { useDispatch } from "react-redux";
 
 const Product = (props) => {
@@ -13,6 +13,7 @@ const Product = (props) => {
         <p class="card-text">Rs. {props.price}/-</p>
         <button
           onClick={(e) =>
+            dispatch(addItem({ name: props.productName, price: props.price }))
           }
           className="btn btn-primary"
         >
